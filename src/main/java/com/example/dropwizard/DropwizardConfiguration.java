@@ -9,6 +9,8 @@ public class DropwizardConfiguration extends Configuration {
     @JsonProperty("swagger")
     public SwaggerBundleConfiguration swaggerBundleConfiguration;
 
+//    public CachingBundleConfiguration cachingBundleConfiguration;
+
     public SwaggerBundleConfiguration getSwaggerBundleConfiguration() {
         return swaggerBundleConfiguration;
     }

@@ -1,6 +1,7 @@
 package com.example.dropwizard;
 
 import io.dropwizard.Application;
+import io.dropwizard.Bundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 

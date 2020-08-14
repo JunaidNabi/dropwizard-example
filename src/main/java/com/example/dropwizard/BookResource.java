@@ -1,9 +1,10 @@
 package com.example.dropwizard;
 
+import io.dropwizard.jersey.caching.CacheControl;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -15,7 +16,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Api(value = "sample app")
+@Api(value = "Sample book api")
 @Path("/bookService")
 @Produces(MediaType.APPLICATION_JSON)
 public class BookResource {
@@ -24,7 +25,7 @@ public class BookResource {
 
     @Path("/books")
     @GET
-    @ApiOperation("Sample endpoint")
+    @CacheControl(maxAge = 6, maxAgeUnit = TimeUnit.HOURS)
     public List<Book> getBooks() {
         List<Book> listOfBooks = bookService.getAllBooks();
         return listOfBooks;
